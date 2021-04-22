@@ -1,0 +1,16 @@
+<h2 class="text-center">Products List</h2>
+<div class="row justify-content-center p-25">
+    <app-product 
+        [appTheme]="'azure'" 
+        *ngFor="let product of products" 
+        class="card col-4" 
+        style="width: 25rem; margin: .5%;" 
+        [product]="product"
+        (favoriteEvent)="handleFavorite($event)"
+    >
+    </app-product>
+</div>
+<!-- 
+    appTheme defaultColor="azure" 
+    [appTheme]="'azure'" 
+ -->

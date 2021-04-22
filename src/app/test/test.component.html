@@ -1,0 +1,68 @@
+<h2>Port</h2>
+
+<p>{{ port }}</p>
+<p>{{ 5 + 5 }}</p>
+<p>{{ port }}</p>
+
+<input [id]="testId" type="text" value="Mostafa" />
+<input id={{testId}} type="text" value="Mostafa" />
+
+<p style="color: green"> My Style </p>
+<p [style.color]="textSuccess"> Style binding </p>
+<p [style.color]="isDanger ? 'red' : 'black' "> Conditional style binding </p>
+
+<p [ngStyle]="msgStyles"> Multiple style binding </p>
+
+<button (click)="showEvent($event)" >Show Event</button>
+
+<input type="text" [(ngModel)]="name">
+<p>{{name}}</p>
+
+<input type="text" #myRef>
+<button (click)="showTempRefVal(myRef.value)" >Show Template Reference Value</button>
+<br />
+<span #myRefVal>Hello JS!</span>
+<button (click)="showTempRefVal(myRefVal.innerHTML)" >Show Template Reference Value</button>
+
+<p>Template Reference Value: {{ templateRefText }}</p>
+
+<button (click)="toggle = !toggle">Toggle 'Show me' text</button>
+<h3 *ngIf="toggle">Show me</h3>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">Red</div>
+    <div *ngSwitchCase="'green'">Green</div>
+    <div *ngSwitchCase="'blue'">Blue</div>
+    <div *ngSwitchDefault>Black - default</div>
+</div>
+
+<div *ngFor="let item of list">
+    <li>{{ item }}</li>
+</div>
+
+<div>Data flow parent to child
+    <p>{{ parentData }}</p>
+</div>
+
+<button (click)="sendChildData()" >Send Data from Child</button>
+
+<br />
+<label>Add an item: <input #newItem></label>
+<button (click)="addNewItems(newItem.value)">Add to parent's list</button>
+
+<!-- <p> {{ color | lowercase }} </p> -->
+<!-- <p> {{ color | slice:2:5 }} </p> -->
+<!-- <p> {{ money | currency : 'CAD' : 'symbol' : '2.2-2'}} </p>
+<p> {{ now | date : 'short' }} </p>
+<p> {{ 0.1234 | percent :'4.3-5'}} </p>
+<p> {{ 0.1234 | percent :'4.3-5':'fr'}} </p> -->
+
+<!-- <p>This time is {{ now | date:format }} </p>
+<button (click)="toggle = !toggle">Toggle Format</button> -->
+
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-danger">Left</button>
+    <button type="button" class="btn btn-warning">Middle</button>
+    <button type="button" class="btn btn-success">Right</button>
+  </div>
+  <i class="bi bi-heart-fill"></i>
