@@ -11,7 +11,6 @@ import { ProductComponent } from './product/product.component';
 import { BdCurrencyPipe } from './pipes/bd-currency.pipe';
 import { ThemeDirective } from './directives/theme.directive';
 import { HiddenDirective } from './directives/hidden.directive';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
@@ -28,7 +27,6 @@ import { ReactiveRegisterFormComponent } from './reactive-register-form/reactive
     BdCurrencyPipe,
     ThemeDirective,
     HiddenDirective,
-    LoginComponent,
     RegisterComponent,
     MatchPasswordDirective,
     PasswordPatternDirective,

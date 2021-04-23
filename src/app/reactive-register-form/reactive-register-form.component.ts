@@ -52,8 +52,16 @@ export class ReactiveRegisterFormComponent implements OnInit {
     return this.registerForm.get('addSkills') as FormArray;
   }
 
-  handleSkills() {
-    this.addSkills.push(this.fb.control(''));
+  handleSkills(action: string) {
+    if (action === 'add') {
+      this.addSkills.push(this.fb.control('', [Validators.required]));
+    }
+
+    if (action === 'remove') {
+      this.addSkills.removeAt(this.addSkills.length - 1);
+    }
+    
+    console.log(this.addSkills)
   }
 
   ngOnInit(): void {

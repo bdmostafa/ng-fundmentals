@@ -47,7 +47,7 @@
                         <div class="form-check">
                             <input class="form-check-input" formControlName="subscribe" type="checkbox">
                             <label class="form-check-label">
-                              Check box for emergency contact
+                                Check box for emergency contact
                             </label>
                         </div>
                         <div class="form-group">
@@ -102,15 +102,27 @@
                         </div>
                         <div class="form-group">
                             <label>Skills</label>
-                            <button [disabled]="addSkills.invalid" type="button" class="btn btn-info btn-sm m-2" (click)="handleSkills()">Add Skills</button>
-                            <div formArrayName="addSkills" *ngFor="let tag of addSkills.controls; let idx=index">
-                                <!-- {{addSkills.valid}} -->
-                                <input type="text" class="form-control my-1" [formControlName]="idx">
-                                <!-- <span *ngIf="i.invalid && i.touched">
-                                    <span class="text-danger" *ngIf="i.errors?.required">
+                            <button [disabled]="addSkills.invalid" type="button" class="btn btn-info btn-sm m-2"
+                                (click)="handleSkills('add')">
+                                Add Skills
+                            </button>
+                            <div formArrayName="addSkills" *ngFor="let tag of addSkills.controls; let idx=index"
+                                class="input-group">
+                                <input type="text" class="form-control" [formControlName]="idx">
+                                <div class="input-group-append">
+                                    <!-- <span class="input-group-text"> -->
+                                    <button [disabled]="addSkills.controls[idx].valid" type="button"
+                                        class="btn btn-outline-secondary" (click)="handleSkills('remove')">
+                                        Remove Skill Field
+                                    </button>
+                                    <!-- </span> -->
+                                </div>
+
+                                <span *ngIf="addSkills.controls[idx].invalid && addSkills.controls[idx].touched">
+                                    <span class="text-danger" *ngIf="addSkills.controls[idx].errors?.required">
                                         Tag is required
                                     </span>
-                                </span> -->
+                                </span>
                             </div>
                         </div>
                         <div class="form-group">
